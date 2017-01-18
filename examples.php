@@ -42,7 +42,7 @@ try {
 	// Grab a contact
 	var_dump($oiCP->getContact(42094396));
 	// Create a contact
-	var_dump($oiCP->addContact('joe@shmoe.com', null, null, 'Joe', 'Shmoe', null, '123 Somewhere Ln', 'Apt 12', 'Somewhere', 'NW', '12345', '123-456-7890', '123-456-7890', null));
+	var_dump($oiCP->addContact('joe@shmoe.com', null, null, 'Joe', 'Shmoe', null, '123 Somewhere Ln', 'Apt 12', 'Somewhere', 'NW', '12345', '123-456-7890', '123-456-7890', null, $customFields));
 	// Get messages
 	var_dump($oiCP->getMessages());
 	// Create a list
@@ -65,7 +65,8 @@ try {
 	var_dump($oiCP->moveSubscriptionToList("1_15", 2));
 	// Delete a contact
 	var_dump($oiCP->deleteContact(6));
-	// Updates a contact	
+	// Updates a contact
+	var_dump($oiCP->updateContact(123, 'joe@shmoe.com', null, 'Joe', 'Shmoe', null, '123 Somewhere Ln', 'Apt 12', 'Somewhere', 'NW', '12345', '123-456-7890', '123-456-7890', null, 'normal' $customFields));
 } catch (Exception $oException) { // Catch any exceptions
 	// Dump errors
 	var_dump($oiCP->getErrors());
